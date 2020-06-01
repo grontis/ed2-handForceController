@@ -13,7 +13,7 @@ public class SerialReader : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        serialPort = new SerialPort("COM4",9600, Parity.None, 8, StopBits.One);
+        serialPort = new SerialPort("COM3",9600, Parity.None, 8, StopBits.One);
         serialPort.Open();
     }
 
