@@ -1,3 +1,6 @@
+//This program is outputting a single sensor's value over serial
+
+
 int read1;
 
 
