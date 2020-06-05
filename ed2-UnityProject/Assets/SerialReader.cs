@@ -10,10 +10,12 @@ public class SerialReader : MonoBehaviour
 {
     private SerialPort serialPort;
 
+    private byte[] readings = new byte[5];
+
     // Start is called before the first frame update
     void Start()
     {
-        serialPort = new SerialPort("COM3",9600, Parity.None, 8, StopBits.One);
+        serialPort = new SerialPort("/dev/ttyACM0",9600, Parity.None, 8, StopBits.One);
         serialPort.Open();
     }
 
