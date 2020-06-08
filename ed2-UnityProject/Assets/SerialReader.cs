@@ -96,5 +96,4 @@ public class SerialReader : MonoBehaviour
         }
         Debug.Log(testPrint);
     }
-
 }
