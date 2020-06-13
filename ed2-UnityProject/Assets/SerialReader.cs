@@ -41,7 +41,6 @@ public class SerialReader : MonoBehaviour
         //clear serial in buffer at start
         serialPort.DiscardInBuffer();
         
-        
         //Find test cube game Objects in hierarchy
         cube0 = transform.Find("0").gameObject;
         cube1 = transform.Find("1").gameObject;
@@ -53,24 +52,26 @@ public class SerialReader : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //StartCoroutine("ReadSerial");
+        ReadFromSerial();
+        ProcessMovement();
+    }
 
+    private void ReadFromSerial()
+    {
         //check if there is data in port buffer to read
         if (serialPort.BytesToRead != 0)
         {
             //Read serial message of values
             serialMessage = serialPort.ReadLine();
-        
+
             //safecheck to avoid parsing empty string
             if (serialMessage.Length != 0)
             {
                 ParseMessage();
             }
         }
-
-        ProcessMovement();
     }
-    
+
     private void ParseMessage()
     {
         int j = 0; // this variable represents the current position in the string array
