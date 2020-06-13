@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO.Ports;
+using UnityEngine.Serialization;
 
 
 public class SerialReader : MonoBehaviour
@@ -10,7 +11,7 @@ public class SerialReader : MonoBehaviour
     private SerialPort serialPort;
     private string serialMessage;
 
-    private static int numberOfSensors = 5;
+    private const int NUMBER_OF_SENSORS = 5;
     
     /*Array for sensor readings with one sensor per finger
      [0] -> thumb
@@ -19,7 +20,7 @@ public class SerialReader : MonoBehaviour
      [3] -> ring
      [4] -> pinky
      */
-    private int[] readings = new int[numberOfSensors];
+    private int[] readings = new int[NUMBER_OF_SENSORS];
     
     // Start is called before the first frame update
     //Used for initializations
@@ -36,21 +37,22 @@ public class SerialReader : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        try
+        //StartCoroutine("ReadSerial");
+
+        //check if there is data in port buffer to read
+        if (serialPort.BytesToRead != 0)
         {
             //Read serial message of values
             serialMessage = serialPort.ReadLine();
-            
+        
             //safecheck to avoid parsing empty string
             if (serialMessage.Length != 0)
             {
                 ParseMessage();
             }
         }
-        catch (Exception e)
-        {
-            Debug.Log(e);
-        }
+
+        ProcessMovement();
     }
     
     private void ParseMessage()
@@ -58,7 +60,7 @@ public class SerialReader : MonoBehaviour
         int j = 0; // this variable represents the current position in the string array
         
         //iterate for each sensor and assign values into readings[]
-        for (int i = 0; i < numberOfSensors; i++)
+        for (int i = 0; i < NUMBER_OF_SENSORS; i++)
         {
             string messageValue = "";
             
@@ -85,6 +87,20 @@ public class SerialReader : MonoBehaviour
         
         //DEBUG function to log readings[] to console
         PrintReadings();
+    }
+
+    /*
+     This function is currently moving the transform of the object this script is attached to
+     based on values from sensor 0.
+    */
+    //TODO design functionality to control multiple objects. for example 1 unity gameobject per sensor
+    private void ProcessMovement()
+    {
+        //transform.position = new Vector3((float)readings[0] / 100, transform.position.y, transform.position.z);
+        if (readings[0] > 800)
+        {
+            transform.position = transform.position + new Vector3(5f * Time.deltaTime, 0, 0);
+        }
     }
 
     private void PrintReadings()

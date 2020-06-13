@@ -1,5 +1,5 @@
-const int numOfSensors = 5;
-int readings[numOfSensors];
+const int NUM_OF_SENSORS = 5;
+int readings[NUM_OF_SENSORS];
 String readingsMessage;
 
 void setup() {
@@ -9,12 +9,12 @@ void setup() {
 
 void loop() {
   //read values and store in array
-  for(int i = 0; i < numOfSensors; i++){
+  for(int i = 0; i < NUM_OF_SENSORS; i++){
     readings[i] = analogRead(i);
   }
 
   //create comma separated message to transmit over serial
-  for(int i = 0; i < numOfSensors; i++){
+  for(int i = 0; i < NUM_OF_SENSORS; i++){
     readingsMessage += String(readings[i]) + ",";
   }
 
@@ -24,5 +24,5 @@ void loop() {
   //reset message string
   readingsMessage = "";
 
-  delay(500);
+  delay(50);
 }
