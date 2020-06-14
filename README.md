@@ -10,7 +10,8 @@ Grant Kveton
 Dhaval Manojkumar Shirvi
 
 
-# Serial Communication Between Arduino and Unity C# (as of 6/8/20)
+## Serial Communication Between Arduino and Unity C# 
+*(as of 6/8/20, gkveton)*
 
 If you do not have Unity installed, install it (The unity hub is a nice way to keep track of projects and install versions, in my opinion):
 https://unity3d.com/get-unity/download
@@ -42,3 +43,57 @@ press the play button (or CTRL+P) to start the application.
 Once the application is playing, in the bottom select the console window. The values stored in the array of readings will be output.
 
 NOTE: When making a new Unity project (that isn’t the one setup in the repo) that will be using serial port communication, *before* creating your C# scripts you have to go into Edit-> Project Settings-> Player -> Api compatibility level and set it to “.NET 4.x”, and then restart Unity. Otherwise, the System.IO.Ports namespace will not import. From my debugging over this, I think it has something to do with the way Unity creates C# script assemblies. 
+
+
+## HFController.cs documentation
+*(as of 6/14/20, gkveton)*
+
+#### Constructors:
+HFController() - Initializes a new instance of the HFController class
+
+#### Fields:
+serialPort - System.IO.Ports.SerialPort object
+serialMessage - incoming message form serial port
+NUMBER_OF_SENSORS - number of sensors being read
+readings - array containing sensor readings
+
+#### Methods:
+GetSensorValue(int sensorId) - returns sensor reading from given sensor number
+PrintReadings() - Debugging method used to print array of readings
+
+##### Example use
+```
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CubeController : MonoBehaviour
+{
+    private HFController controllerInput;   
+    
+    // Start is called before the first frame update
+    void Start()
+    {
+        controllerInput = new HFController();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        ProcessMovement();
+        controllerInput.PrintReadings();
+    }
+    
+    private void ProcessMovement()
+    {
+        if (controllerInput.GetSensorValue(0) > 800)
+        {
+            transform.position = transform.position + new Vector3(5f * Time.deltaTime, 0, 0);
+        }
+        if (controllerInput.GetSensorValue(1) > 800)
+        {
+            cube1.transform.position = cube1.transform.position - new Vector3(5f * Time.deltaTime, 0, 0);
+        }
+    }
+}
+```
