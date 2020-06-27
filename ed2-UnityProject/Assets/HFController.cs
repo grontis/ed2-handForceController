@@ -23,7 +23,7 @@ public class HFController
     public HFController()
     {
         //TODO: dynamically assign serial port name. different on various machines
-        serialPort = new SerialPort("/dev/ttyACM0",9600, Parity.None, 8, StopBits.One);
+        serialPort = new SerialPort("COM3",9600, Parity.None, 8, StopBits.One);
         serialPort.Open();
         
         //clear serial in buffer at start
