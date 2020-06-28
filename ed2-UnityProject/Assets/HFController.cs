@@ -3,14 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO.Ports;
+using System.Threading;
 
 public class HFController
 {
     private SerialPort serialPort;
     private string serialMessage;
     
-    private const int NUMBER_OF_SENSORS = 5;
+    private bool isConnected = false;
     
+    private const int NUMBER_OF_SENSORS = 5;
+
     /*Array for sensor readings with one sensor per finger
         [0] -> thumb
         [1] -> pointer
@@ -22,14 +25,57 @@ public class HFController
 
     public HFController()
     {
-        //TODO: dynamically assign serial port name. different on various machines
-        serialPort = new SerialPort("COM3",9600, Parity.None, 8, StopBits.One);
-        serialPort.Open();
-        
-        //clear serial in buffer at start
-        serialPort.DiscardInBuffer();
+        FindDevicePort();
     }
     
+    private void FindDevicePort()
+    {
+        // Get a list of serial port names.
+        string[] ports = SerialPort.GetPortNames();
+
+        // Display each port name to the console.
+        foreach(string port in ports)
+        {
+            serialPort = new SerialPort(port, 9600, Parity.None, 8, StopBits.One);
+            //serialPort.DiscardInBuffer();
+            serialPort.Open();
+            serialPort.DiscardInBuffer();
+            
+            serialPort.WriteLine("WakeUp");
+            
+            //Thread to wait for response in ms
+            Thread.Sleep(100);
+
+            if (serialPort.BytesToRead != 0)
+            {
+                string response = serialPort.ReadLine();
+
+                if (response == "ArduinoUno")
+                {
+                    Debug.Log("Response message received. Connected to device on port: " + port);
+                    isConnected = true;
+                    serialPort.DiscardInBuffer();
+                    Thread.Sleep(50); //sleep thread to make sure there will be data coming from arduino
+                }
+                else
+                {
+                    Debug.Log("Incorrect response message from device on port: " + port + ". Closing serialPort. Message: " + response );
+                    serialPort.Close();
+                }
+            }
+            else
+            {
+                Debug.Log("No response from device on port: " + port + ". Closing serialPort.");
+                serialPort.Close();
+            }
+        }
+    }
+
+    public bool IsConnected
+    {
+        get => isConnected;
+    }
+
     public int GetSensorValue(int sensorId)
     {
         ReadFromSerial();
@@ -53,7 +99,9 @@ public class HFController
         {
             //Read serial message of values
             serialMessage = serialPort.ReadLine();
-
+            
+            serialPort.WriteLine("reading");
+            
             //safecheck to avoid parsing empty string
             if (serialMessage.Length != 0)
             {

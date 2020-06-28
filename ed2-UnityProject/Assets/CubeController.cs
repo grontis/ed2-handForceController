@@ -31,8 +31,11 @@ public class CubeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ProcessMovement();
-        controllerInput.PrintReadings();
+        if (controllerInput.IsConnected)
+        {
+            ProcessMovement();
+            controllerInput.PrintReadings();
+        }
     }
     
     private void ProcessMovement()
