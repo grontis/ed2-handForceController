@@ -45,6 +45,13 @@ void loop() {
       if(incomingMessage == "reading"){
         timeSinceLastReading = 0;
       }
+      else if(incomingMessage == "WakeUp"){
+        Serial.println("ArduinoUno");
+        isConnected = true;
+        timeSinceLastReading = 0;
+        delay(loopDelay);
+        return;
+      }
     }
     
     //read values and store in array

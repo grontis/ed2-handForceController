@@ -36,6 +36,10 @@ public class CubeController : MonoBehaviour
             ProcessMovement();
             controllerInput.PrintReadings();
         }
+        else
+        {
+            
+        }
     }
     
     private void ProcessMovement()

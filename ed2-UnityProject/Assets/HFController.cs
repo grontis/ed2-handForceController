@@ -11,6 +11,7 @@ public class HFController
     private string serialMessage;
     
     private bool isConnected = false;
+    private string[] portNames;
     
     private const int NUMBER_OF_SENSORS = 5;
 
@@ -31,13 +32,12 @@ public class HFController
     private void FindDevicePort()
     {
         // Get a list of serial port names.
-        string[] ports = SerialPort.GetPortNames();
+        portNames = SerialPort.GetPortNames();
 
         // Display each port name to the console.
-        foreach(string port in ports)
+        foreach(string port in portNames)
         {
             serialPort = new SerialPort(port, 9600, Parity.None, 8, StopBits.One);
-            //serialPort.DiscardInBuffer();
             serialPort.Open();
             serialPort.DiscardInBuffer();
             
@@ -69,6 +69,11 @@ public class HFController
                 serialPort.Close();
             }
         }
+    }
+
+    public string[] PortNames
+    {
+        get => portNames;
     }
 
     public bool IsConnected
