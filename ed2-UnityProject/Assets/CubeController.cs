@@ -13,6 +13,8 @@ public class CubeController : MonoBehaviour
     public GameObject cube2;
     public GameObject cube3;
     public GameObject cube4;
+
+    public GameObject controllerAlertPanel;
     
     
     // Start is called before the first frame update
@@ -33,12 +35,18 @@ public class CubeController : MonoBehaviour
     {
         if (controllerInput.IsConnected)
         {
+            controllerAlertPanel.SetActive(false);
+            
             ProcessMovement();
-            controllerInput.PrintReadings();
+            
+            //controllerInput.PrintReadings(); //debugging function to print readings at each frame
         }
         else
         {
+            controllerAlertPanel.SetActive(true);
             
+            //try to reconnect
+            controllerInput.ReconnectDevice();
         }
     }
     
