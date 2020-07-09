@@ -15,6 +15,8 @@ public class HFController
     
     private const int NUMBER_OF_SENSORS = 5;
 
+    private bool debugMode = false;
+
     /*Array for sensor readings with one sensor per finger
         [0] -> thumb
         [1] -> pointer
@@ -28,46 +30,65 @@ public class HFController
     {
         FindDevicePort();
     }
+
+    public HFController(bool debugMode)
+    {
+        this.debugMode = debugMode;
+        
+        FindDevicePort();
+    }
+
+    public void ReconnectDevice()
+    {
+        FindDevicePort();
+    }
     
     private void FindDevicePort()
     {
         // Get a list of serial port names.
         portNames = SerialPort.GetPortNames();
-
-        // Display each port name to the console.
-        foreach(string port in portNames)
+        
+        try
         {
-            serialPort = new SerialPort(port, 9600, Parity.None, 8, StopBits.One);
-            serialPort.Open();
-            serialPort.DiscardInBuffer();
-            
-            serialPort.WriteLine("WakeUp");
-            
-            //Thread to wait for response in ms
-            Thread.Sleep(100);
-
-            if (serialPort.BytesToRead != 0)
+            // Display each port name to the console.
+            foreach(string port in portNames)
             {
-                string response = serialPort.ReadLine();
+                serialPort = new SerialPort(port, 9600, Parity.None, 8, StopBits.One);
+                serialPort.Open();
+                serialPort.DiscardInBuffer();
+            
+                serialPort.WriteLine("WakeUp");
+            
+                //Thread to wait for response in ms
+                Thread.Sleep(100);
 
-                if (response == "ArduinoUno")
+                if (serialPort.BytesToRead != 0)
                 {
-                    Debug.Log("Response message received. Connected to device on port: " + port);
-                    isConnected = true;
-                    serialPort.DiscardInBuffer();
-                    Thread.Sleep(50); //sleep thread to make sure there will be data coming from arduino
+                    string response = serialPort.ReadLine();
+
+                    if (response == "ArduinoUno")
+                    {
+                        Debug.Log("Response message received. Connected to device on port: " + port);
+                        isConnected = true;
+                        serialPort.DiscardInBuffer();
+                        Thread.Sleep(50); //sleep thread to make sure there will be data coming from arduino
+                    }
+                    else
+                    {
+                        Debug.Log("Incorrect response message from device on port: " + port + ". Closing serialPort. Message: " + response );
+                        serialPort.Close();
+                    }
                 }
                 else
                 {
-                    Debug.Log("Incorrect response message from device on port: " + port + ". Closing serialPort. Message: " + response );
+                    Debug.Log("No response from device on port: " + port + ". Closing serialPort.");
                     serialPort.Close();
                 }
             }
-            else
-            {
-                Debug.Log("No response from device on port: " + port + ". Closing serialPort.");
-                serialPort.Close();
-            }
+        }
+        catch (Exception e)
+        {
+            Debug.Log(e);
         }
     }
 
@@ -95,23 +116,30 @@ public class HFController
             return 0;
         }
     }
-    
-    
+
     private void ReadFromSerial()
     {
-        //check if there is data in port buffer to read
-        if (serialPort.BytesToRead != 0)
+        try
         {
-            //Read serial message of values
-            serialMessage = serialPort.ReadLine();
-            
-            serialPort.WriteLine("reading");
-            
-            //safecheck to avoid parsing empty string
-            if (serialMessage.Length != 0)
+            //check if there is data in port buffer to read
+            if (serialPort.BytesToRead != 0)
             {
-                ParseMessage();
+                //Read serial message of values
+                serialMessage = serialPort.ReadLine();
+            
+                serialPort.WriteLine("reading");
+            
+                //safecheck to avoid parsing empty string
+                if (serialMessage.Length != 0)
+                {
+                    ParseMessage();
+                }
             }
+        }
+        catch (Exception e)
+        {
+            Debug.Log(e);
+            isConnected = false;
         }
     }
 
