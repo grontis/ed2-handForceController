@@ -1,12 +1,9 @@
-int loopDelay = 50; //ms
-
+int loopDelay = 1; //ms
 String incomingMessage;
 String wakeUpValue = "WakeUp";
-
 const int NUM_OF_SENSORS = 5;
 int readings[NUM_OF_SENSORS];
 String readingsMessage;
-
 bool isConnected = false;
 int timeSinceLastReading = 0; //time in ms since last reading
 int connectionTimeout = 500; //.5 second

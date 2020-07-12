@@ -515,7 +515,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 104706341}
+      - m_Target: {fileID: 0}
         m_MethodName: shiftFunction
         m_Mode: 1
         m_Arguments:
@@ -922,22 +922,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 104706336}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58fb3035c9ea54d86a49ce4347b4882a, type: 3}
+  m_Script: {fileID: 11500000, guid: 33aab0ed9b31787438790fe161857096, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   HTbutton:
-  - {fileID: 971091303}
-  - {fileID: 519412860}
-  - {fileID: 1820748141}
-  - {fileID: 519024765}
-  - {fileID: 1833000252}
-  txt: {fileID: 295420946}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  txt: {fileID: 0}
   Inputcmd:
-  - {fileID: 2114760904}
-  - {fileID: 2122259316}
-  - {fileID: 916543020}
-  - {fileID: 2066040591}
-  - {fileID: 1995991722}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   commands:
   - 
   - 
@@ -1301,7 +1301,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 104706341}
+      - m_Target: {fileID: 0}
         m_MethodName: TypeLetter
         m_Mode: 5
         m_Arguments:
@@ -1509,7 +1509,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 104706341}
+      - m_Target: {fileID: 0}
         m_MethodName: TypeLetter
         m_Mode: 5
         m_Arguments:
@@ -1795,7 +1795,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 104706341}
+      - m_Target: {fileID: 0}
         m_MethodName: TypeLetter
         m_Mode: 5
         m_Arguments:
@@ -2081,7 +2081,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 104706341}
+      - m_Target: {fileID: 0}
         m_MethodName: TypeLetter
         m_Mode: 5
         m_Arguments:
@@ -2211,7 +2211,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 104706341}
+      - m_Target: {fileID: 0}
         m_MethodName: TypeLetter
         m_Mode: 5
         m_Arguments:
@@ -2497,7 +2497,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 104706341}
+      - m_Target: {fileID: 0}
         m_MethodName: TypeLetter
         m_Mode: 5
         m_Arguments:
@@ -2705,7 +2705,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 104706341}
+      - m_Target: {fileID: 0}
         m_MethodName: TypeLetter
         m_Mode: 5
         m_Arguments:
@@ -2835,7 +2835,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 104706341}
+      - m_Target: {fileID: 0}
         m_MethodName: TypeLetter
         m_Mode: 5
         m_Arguments:
@@ -2965,7 +2965,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 104706341}
+      - m_Target: {fileID: 0}
         m_MethodName: HoldToggle
         m_Mode: 3
         m_Arguments:
@@ -3095,7 +3095,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 104706341}
+      - m_Target: {fileID: 0}
         m_MethodName: HoldToggle
         m_Mode: 3
         m_Arguments:
@@ -3537,7 +3537,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 104706341}
+      - m_Target: {fileID: 0}
         m_MethodName: TypeLetter
         m_Mode: 5
         m_Arguments:
@@ -3667,7 +3667,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 104706341}
+      - m_Target: {fileID: 0}
         m_MethodName: TypeLetter
         m_Mode: 5
         m_Arguments:
@@ -3875,7 +3875,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 104706341}
+      - m_Target: {fileID: 0}
         m_MethodName: checkCommands
         m_Mode: 1
         m_Arguments:
@@ -4244,7 +4244,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 104706341}
+      - m_Target: {fileID: 0}
         m_MethodName: TypeLetter
         m_Mode: 5
         m_Arguments:
@@ -4374,7 +4374,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 104706341}
+      - m_Target: {fileID: 0}
         m_MethodName: backspaceFunction
         m_Mode: 1
         m_Arguments:
@@ -4497,7 +4497,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 104706341}
+      - m_Target: {fileID: 0}
         m_MethodName: getCommand
         m_Mode: 3
         m_Arguments:
@@ -4811,7 +4811,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 104706341}
+      - m_Target: {fileID: 0}
         m_MethodName: TypeLetter
         m_Mode: 5
         m_Arguments:
@@ -4941,7 +4941,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 104706341}
+      - m_Target: {fileID: 0}
         m_MethodName: HoldToggle
         m_Mode: 3
         m_Arguments:
@@ -5190,7 +5190,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 104706341}
+      - m_Target: {fileID: 0}
         m_MethodName: TypeLetter
         m_Mode: 5
         m_Arguments:
@@ -5476,7 +5476,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 104706341}
+      - m_Target: {fileID: 0}
         m_MethodName: TypeLetter
         m_Mode: 5
         m_Arguments:
@@ -5762,7 +5762,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 104706341}
+      - m_Target: {fileID: 0}
         m_MethodName: TypeLetter
         m_Mode: 5
         m_Arguments:
@@ -6204,7 +6204,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 104706341}
+      - m_Target: {fileID: 0}
         m_MethodName: TypeLetter
         m_Mode: 5
         m_Arguments:
@@ -6490,7 +6490,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 104706341}
+      - m_Target: {fileID: 0}
         m_MethodName: TypeLetter
         m_Mode: 5
         m_Arguments:
@@ -7106,7 +7106,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 104706341}
+      - m_Target: {fileID: 0}
         m_MethodName: TypeLetter
         m_Mode: 5
         m_Arguments:
@@ -7236,7 +7236,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 104706341}
+      - m_Target: {fileID: 0}
         m_MethodName: TypeLetter
         m_Mode: 5
         m_Arguments:
@@ -7444,7 +7444,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 104706341}
+      - m_Target: {fileID: 0}
         m_MethodName: HoldToggle
         m_Mode: 3
         m_Arguments:
@@ -7574,7 +7574,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 104706341}
+      - m_Target: {fileID: 0}
         m_MethodName: HoldToggle
         m_Mode: 3
         m_Arguments:
@@ -8137,7 +8137,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 104706341}
+      - m_Target: {fileID: 0}
         m_MethodName: enterFunction
         m_Mode: 1
         m_Arguments:
@@ -8260,7 +8260,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 104706341}
+      - m_Target: {fileID: 0}
         m_MethodName: getCommand
         m_Mode: 3
         m_Arguments:
@@ -8496,7 +8496,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 104706341}
+      - m_Target: {fileID: 0}
         m_MethodName: TypeLetter
         m_Mode: 5
         m_Arguments:
@@ -8697,7 +8697,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 104706341}
+      - m_Target: {fileID: 0}
         m_MethodName: getCommand
         m_Mode: 3
         m_Arguments:
@@ -8855,7 +8855,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 104706341}
+      - m_Target: {fileID: 0}
         m_MethodName: TypeLetter
         m_Mode: 5
         m_Arguments:
@@ -9056,7 +9056,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 104706341}
+      - m_Target: {fileID: 0}
         m_MethodName: getCommand
         m_Mode: 3
         m_Arguments:
@@ -9207,7 +9207,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 104706341}
+      - m_Target: {fileID: 0}
         m_MethodName: getCommand
         m_Mode: 3
         m_Arguments:
@@ -9484,7 +9484,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 104706341}
+      - m_Target: {fileID: 0}
         m_MethodName: TypeLetter
         m_Mode: 5
         m_Arguments:
