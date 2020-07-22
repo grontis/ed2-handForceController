@@ -1,6 +1,8 @@
+
 import keyboard
 import serial
 from time import sleep
+from GetCommand import GetCommands
 
 NUMBER_OF_SENSORS = 5
 readings = [0] * 5
@@ -44,42 +46,363 @@ def parseMessage(serialMessage):
         readings[i] = int(messageValue)
         j = j+1
 
+gc = GetCommands()#reads file
+commands = gc.getCommands()#gets commands from the file
+threshold = 800
+
+
+def pressKey(i, combo):
+    if(commands[combo] != ""):
+        keyboard.press(commands[combo]) #will keep repeating until released
+        print("pressing " + commands[combo])
+        sleep(.001)       
+                    
+    else:    
+        keyboard.press(commands[i]) #will keep repeating until released
+        print("pressing " + commands[i])
+        sleep(.001)
+
 while True:
     if(isConnected):
-        if(getSensorValue(0) > 800):
-            keyboard.press("s")
-            print("pressing s")
-            sleep(.001)
-        else:
-            keyboard.release("s")
+        #finger 1
+        if(getSensorValue(0) > threshold):
+            if(getSensorValue(1) > threshold):
+                if(getSensorValue(2) > threshold):
+                    if(getSensorValue(3) > threshold):
+                        if(getSensorValue(4) > threshold):
+                            #finger1,2,3,4,5
+                            pressKey(0, 30)
+                            
+                        #finger1,2,3,4
+                        pressKey(0, 25)
+                        
+                    #finger 1,2,3,5
+                    elif(getSensorValue(4) > threshold):
+                        pressKey(0, 27)
+                        
+                    #finger1,2,3 
+                    pressKey(0,15)
+                        
+                elif(getSensorValue(3) > threshold):
+                    if(getSensorValue(4) > threshold):
+                        #finger 1,2,4,5
+                        pressKey(0, 28)
+                    #finger 1,2,4 
+                    pressKey(0,18)
+                        
+                elif(getSensorValue(4) > threshold):
+                    #finger 1,2,5
+                    pressKey(0,20)
+                #finger 1,2
+                pressKey(0, 5)
+                
+                        
+            elif(getSensorValue(2) > threshold):
+                if(getSensorValue(3) > threshold):
+                    if(getSensorValue(4) > threshold):
+                        #finger1,3,4,5
+                        pressKey(0,29)
+                    #finger1,3,4
+                    pressKey(0, 21)
+                    
+                #finger 1,3,5  
+                elif(getSensorValue(4) < threshold):
+                    pressKey(0, 23)
+                    
+                #finger1,3
+                pressKey(0, 9)
 
-        if(getSensorValue(1) > 800):
-            keyboard.press("a")
-            print("pressing a")
-            sleep(.001)
-        else:
-            keyboard.release("a")
 
-        if(getSensorValue(2) > 800):
-            keyboard.press("w")
-            print("pressing w")
-            sleep(.001)
-        else:
-            keyboard.release("w")
+            elif(getSensorValue(3) > threshold):
+                if(getSensorValue(4) > threshold):
+                    #finger1,4,5
+                    pressKey(0,24)
+                    
+                #finger1,4
+                pressKey(0, 12)
 
-        if(getSensorValue(3) > 800):
-            keyboard.press("d")
-            print("pressing d")
-            sleep(.001)
-        else:
-            keyboard.release("d")
 
-        if(getSensorValue(4) > 800):
-            keyboard.press("space")
-            print("pressing space")
-            sleep(.001)
-        else:
-            keyboard.release("space")
+            elif(getSensorValue(4) > threshold):
+                #finger1,5
+                pressKey(0, 14)
+
+
+            #finger 1    done
+            else:
+                pressKey(0,0)
+            
+            
+        #finger 2
+        if(getSensorValue(1) > threshold):
+            if(getSensorValue(0) > threshold):
+                if(getSensorValue(2) > threshold):
+                    if(getSensorValue(3) > threshold):
+                        if(getSensorValue(4) > threshold):
+                            #finger2,1,3,4,5
+                            pressKey(1, 30)
+                            
+                        #finger2,1,3,4
+                        pressKey(1, 25)
+                        
+                    #finger 2,1,3,5
+                    elif(getSensorValue(4) > threshold):
+                        pressKey(1, 27)
+                        
+                    #finger2,1,3 
+                    pressKey(1,15)
+                        
+                elif(getSensorValue(3) > threshold):
+                    if(getSensorValue(4) > threshold):
+                        #finger 2,1,4,5
+                        pressKey(1, 28)
+                    #finger 2,1,4 
+                    pressKey(1,18)
+                        
+                elif(getSensorValue(4) > threshold):
+                    #finger 2,1,5
+                    pressKey(1,20)
+                #finger 2,1
+                pressKey(1, 5)
+                
+                        
+            elif(getSensorValue(2) > threshold):
+                if(getSensorValue(3) > 800):
+                    if(getSensorValue(4) > threshold):
+                        #finger2,3,4,5
+                        pressKey(1,26)
+                    #finger2,3,4
+                    pressKey(1, 16)
+                    
+                #finger 2,3,5  
+                elif(getSensorValue(4) < threshold):
+                    pressKey(1,19)
+                    
+                #finger2,3
+                pressKey(1, 6)
+
+
+            elif(getSensorValue(3) > threshold):
+                if(getSensorValue(4) > threshold):
+                    #finger2,4,5
+                    pressKey(1,22)
+                    
+                #finger2,4
+                pressKey(1, 10)
+
+
+            elif(getSensorValue(4) > threshold):
+                #finger2,5
+                pressKey(1, 13)
+
+
+            #finger 2    done
+            else:
+                pressKey(1,1)
+        #finger 2 done
+        
+                               
+        #finger3  
+        if(getSensorValue(2) > threshold):
+            if(getSensorValue(1) > threshold):
+                if(getSensorValue(0) > threshold):
+                    if(getSensorValue(3) > threshold):
+                        if(getSensorValue(4) > threshold):
+                            #finger3,1,2,4,5
+                            pressKey(2, 30)
+                            
+                        #finger3,1,2,4
+                        pressKey(3, 25)
+                        
+                    #finger 3,1,2,5
+                    elif(getSensorValue(4) > threshold):
+                        pressKey(2, 27)
+                        
+                    #finger3,1,2 
+                    pressKey(2,15)
+                        
+                elif(getSensorValue(3) > threshold):
+                    if(getSensorValue(4) > threshold):
+                        #finger 3,2,4,5
+                        pressKey(2, 26)
+                    #finger 3,2,4 
+                    pressKey(2,16)
+                        
+                elif(getSensorValue(4) > threshold):
+                    #finger 3,2,5
+                    pressKey(2, 19)
+                #finger 3,2
+                pressKey(2, 6)
+                
+                        
+            elif(getSensorValue(0) > threshold):
+                if(getSensorValue(3) > threshold):
+                    if(getSensorValue(4) > threshold):
+                        #finger1,3,4,5
+                        pressKey(2,29)
+                    #finger1,3,4
+                    pressKey(2, 21)
+                    
+                #finger 1,3,5  
+                elif(getSensorValue(4) < threshold):
+                    pressKey(2, 23)
+                    
+                #finger1,3
+                pressKey(2, 9)
+
+
+            elif(getSensorValue(3) > threshold):
+                if(getSensorValue(4) > threshold):
+                    #finger3,4,5
+                    pressKey(2,17)
+                    
+                #finger3,4
+                pressKey(2,7)
+
+
+            elif(getSensorValue(4) > threshold):
+                #finger3,5
+                pressKey(2, 11)
+
+
+            #finger 3    done
+            else:
+                pressKey(2,2)
+                
+        #finger4
+        if(getSensorValue(3) > threshold):
+            if(getSensorValue(1) > threshold):
+                if(getSensorValue(2) > threshold):
+                    if(getSensorValue(0) > threshold):
+                        if(getSensorValue(4) > threshold):
+                            #finger1,2,3,4,5
+                            pressKey(3, 30)
+                            
+                        #finger1,2,3,4
+                        pressKey(3, 25)
+                        
+                    #finger 4,2,3,5
+                    elif(getSensorValue(4) > threshold):
+                        pressKey(3, 26)
+                        
+                    #finger4,2,3 
+                    pressKey(3,16)
+                        
+                elif(getSensorValue(0) > threshold):
+                    if(getSensorValue(4) > threshold):
+                        #finger 1,2,4,5
+                        pressKey(3, 28)
+                    #finger 1,2,4 
+                    pressKey(3,18)
+                        
+                elif(getSensorValue(4) > threshold):
+                    #finger 4,2,5
+                    pressKey(3,22)
+                #finger 4,2
+                pressKey(3, 10)
+                
+                        
+            elif(getSensorValue(2) > threshold):
+                if(getSensorValue(0) > threshold):
+                    if(getSensorValue(4) > threshold):
+                        #finger1,3,4,5
+                        pressKey(3,29)
+                    #finger1,3,4
+                    pressKey(3, 21)
+                    
+                #finger 4,3,5  
+                elif(getSensorValue(4) < threshold):
+                    pressKey(3, 17)
+                    
+                #finger4,3
+                pressKey(3, 7)
+
+
+            elif(getSensorValue(0) > threshold):
+                if(getSensorValue(4) > threshold):
+                    #finger1,4,5
+                    pressKey(3,24)
+                    
+                #finger1,4
+                pressKey(3, 12)
+
+
+            elif(getSensorValue(4) > threshold):
+                #finger4,5
+                pressKey(3, 8)
+
+
+            #finger 4    done
+            else:
+                pressKey(3,3)
+            
+        #finger5
+        if(getSensorValue(4) > threshold):
+            if(getSensorValue(1) > threshold):
+                if(getSensorValue(2) > threshold):
+                    if(getSensorValue(3) > threshold):
+                        if(getSensorValue(0) > threshold):
+                            #finger1,2,3,4,5
+                            pressKey(4, 30)
+                            
+                        #finger5,2,3,4
+                        pressKey(4,26)
+                        
+                    #finger 1,2,3,5
+                    elif(getSensorValue(0) > threshold):
+                        pressKey(4, 27)
+                        
+                    #finger5,2,3 
+                    pressKey(4,19)
+                        
+                elif(getSensorValue(3) > threshold):
+                    if(getSensorValue(0) > threshold):
+                        #finger 1,2,4,5
+                        pressKey(4, 28)
+                    #finger 5,2,4 
+                    pressKey(4,22)
+                        
+                elif(getSensorValue(0) > threshold):
+                    #finger 1,2,5
+                    pressKey(4,20)
+                #finger 5,2
+                pressKey(4, 13)
+                
+                        
+            elif(getSensorValue(2) > threshold):
+                if(getSensorValue(3) > threshold):
+                    if(getSensorValue(0) > threshold):
+                        #finger1,3,4,5
+                        pressKey(4,29)
+                    #finger5,3,4
+                    pressKey(4, 17)
+                    
+                #finger 1,3,5  
+                elif(getSensorValue(0) < threshold):
+                    pressKey(4, 23)
+                    
+                #finger5,3
+                pressKey(4, 11)
+
+
+            elif(getSensorValue(3) > threshold):
+                if(getSensorValue(0) > threshold):
+                    #finger1,4,5
+                    pressKey(4,24)
+                    
+                #finger5,4
+                pressKey(4, 8)
+
+
+            elif(getSensorValue(0) > threshold):
+                #finger1,5
+                pressKey(4, 14)
+
+
+            #finger 5    done
+            else:
+                pressKey(4,4)
+
+           
 
     else:
         wakeUpController()
