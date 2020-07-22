@@ -13,7 +13,7 @@ public class HFController
     private bool isConnected = false;
     private string[] portNames;
     
-    private const int NUMBER_OF_SENSORS = 5;
+    private const int NUMBER_OF_SENSORS = 8;
 
     private bool debugMode = false;
 

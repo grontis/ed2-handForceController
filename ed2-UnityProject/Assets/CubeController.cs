@@ -39,7 +39,7 @@ public class CubeController : MonoBehaviour
             
             ProcessMovement();
             
-            //controllerInput.PrintReadings(); //debugging function to print readings at each frame
+            controllerInput.PrintReadings(); //debugging function to print readings at each frame
         }
         else
         {
