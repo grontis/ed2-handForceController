@@ -45,7 +45,7 @@ Once the application is playing, in the bottom select the console window. The va
 NOTE: When making a new Unity project (that isn’t the one setup in the repo) that will be using serial port communication, *before* creating your C# scripts you have to go into Edit-> Project Settings-> Player -> Api compatibility level and set it to “.NET 4.x”, and then restart Unity. Otherwise, the System.IO.Ports namespace will not import. From my debugging over this, I think it has something to do with the way Unity creates C# script assemblies. 
 
 ## HFController.cs documentation
-*(as of 6/14/20, gkveton)*
+*(as of 7/29/20, gkveton)*
 
 #### Constructors:
 HFController() - Initializes a new instance of the HFController class
