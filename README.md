@@ -59,10 +59,18 @@ NUMBER_OF_SENSORS - number of sensors being read
 
 readings - array containing sensor readings
 
-#### Methods:
-GetSensorValue(int sensorId) - returns sensor reading from given sensor number
+#### Properties
 
-PrintReadings() - Debugging method used to print array of readings
+IsConnected - Gets the boolean value of whether the serial port is open and connected for the device.
+
+PortNames - Gets the array of string values for all available port names.
+
+#### Methods:
+GetSensorValue(int sensorId) - returns sensor reading from given sensor number. 
+
+PrintReadings() - Debugging method used to print array of readings.
+
+ClosePort() - Closes the connection to the serial port for the device.
 
 ##### Example use
 ```
@@ -97,6 +105,12 @@ public class CubeController : MonoBehaviour
         {
             cube1.transform.position = cube1.transform.position - new Vector3(5f * Time.deltaTime, 0, 0);
         }
+    }
+    
+    private void EndSimulation
+    {
+        //Application exit logic here, perhaps this function is called when an "Exit" button is clicked. 
+        controllerInput.ClosePort();
     }
 }
 ```
