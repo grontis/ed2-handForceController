@@ -305,7 +305,7 @@ MonoBehaviour:
     slowDownRate: 20
     airControl: 0
     shellOffset: 0
-  rotateSpeed: 100
+  rotateSpeed: 90
 --- !u!114 &4268327812033376315
 MonoBehaviour:
   m_ObjectHideFlags: 0

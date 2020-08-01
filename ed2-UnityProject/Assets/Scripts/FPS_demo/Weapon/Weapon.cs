@@ -53,7 +53,7 @@ public class Weapon : MonoBehaviour
     private void DisplayAmmo()
     {
         int currentAmmo = ammoSlot.GetCurrentAmount(AmmoType.Bullets);
-        ammoText.text = currentAmmo.ToString();
+        ammoText.text = "AMMO : " + currentAmmo.ToString();
     }
 
     public void FireWeapon()

@@ -19,7 +19,7 @@ public class SceneLoader : MonoBehaviour
 
     public void ReloadGame()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("FPSLevel1", LoadSceneMode.Single);
         Time.timeScale = 1f;
     }
 
