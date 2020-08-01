@@ -53,7 +53,7 @@ public class Calibration : MonoBehaviour
         {
             instruct.text = "Please connect device before calibrating";
         }
-        //serialPort.Close();
+        controllerInput.ClosePort();
     }
 
     //Functions for loading other scenes
