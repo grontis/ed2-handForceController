@@ -2144,7 +2144,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 104706336}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f959b000e14f547418606c875048aace, type: 3}
+  m_Script: {fileID: 11500000, guid: 5622652bef412bb4aa8979d2b9a42e2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   txt: {fileID: 295420946}
@@ -4096,8 +4096,6 @@ MonoBehaviour:
     m_Options:
     - m_Text: ....
       m_Image: {fileID: 0}
-    - m_Text: Alt
-      m_Image: {fileID: 0}
     - m_Text: Ctrl
       m_Image: {fileID: 0}
     - m_Text: Shift
@@ -5938,8 +5936,6 @@ MonoBehaviour:
     m_Options:
     - m_Text: ....
       m_Image: {fileID: 0}
-    - m_Text: Alt
-      m_Image: {fileID: 0}
     - m_Text: Ctrl
       m_Image: {fileID: 0}
     - m_Text: Shift
@@ -6098,8 +6094,6 @@ MonoBehaviour:
   m_Options:
     m_Options:
     - m_Text: ....
-      m_Image: {fileID: 0}
-    - m_Text: Alt
       m_Image: {fileID: 0}
     - m_Text: Ctrl
       m_Image: {fileID: 0}
@@ -8697,8 +8691,6 @@ MonoBehaviour:
     m_Options:
     - m_Text: ....
       m_Image: {fileID: 0}
-    - m_Text: Alt
-      m_Image: {fileID: 0}
     - m_Text: Ctrl
       m_Image: {fileID: 0}
     - m_Text: Shift
@@ -10300,8 +10292,6 @@ MonoBehaviour:
   m_Options:
     m_Options:
     - m_Text: ....
-      m_Image: {fileID: 0}
-    - m_Text: Alt
       m_Image: {fileID: 0}
     - m_Text: Ctrl
       m_Image: {fileID: 0}
@@ -14795,8 +14785,6 @@ MonoBehaviour:
     m_Options:
     - m_Text: ....
       m_Image: {fileID: 0}
-    - m_Text: Alt
-      m_Image: {fileID: 0}
     - m_Text: Ctrl
       m_Image: {fileID: 0}
     - m_Text: Shift
@@ -18806,8 +18794,6 @@ MonoBehaviour:
     m_Options:
     - m_Text: ....
       m_Image: {fileID: 0}
-    - m_Text: Alt
-      m_Image: {fileID: 0}
     - m_Text: Ctrl
       m_Image: {fileID: 0}
     - m_Text: Shift
@@ -18966,8 +18952,6 @@ MonoBehaviour:
   m_Options:
     m_Options:
     - m_Text: ....
-      m_Image: {fileID: 0}
-    - m_Text: Alt
       m_Image: {fileID: 0}
     - m_Text: Ctrl
       m_Image: {fileID: 0}
@@ -19439,8 +19423,6 @@ MonoBehaviour:
   m_Options:
     m_Options:
     - m_Text: ....
-      m_Image: {fileID: 0}
-    - m_Text: Alt
       m_Image: {fileID: 0}
     - m_Text: Ctrl
       m_Image: {fileID: 0}
@@ -20092,8 +20074,6 @@ MonoBehaviour:
   m_Options:
     m_Options:
     - m_Text: ....
-      m_Image: {fileID: 0}
-    - m_Text: Alt
       m_Image: {fileID: 0}
     - m_Text: Ctrl
       m_Image: {fileID: 0}
@@ -22479,8 +22459,6 @@ MonoBehaviour:
   m_Options:
     m_Options:
     - m_Text: ....
-      m_Image: {fileID: 0}
-    - m_Text: Alt
       m_Image: {fileID: 0}
     - m_Text: Ctrl
       m_Image: {fileID: 0}
@@ -25365,8 +25343,6 @@ MonoBehaviour:
     m_Options:
     - m_Text: ....
       m_Image: {fileID: 0}
-    - m_Text: Alt
-      m_Image: {fileID: 0}
     - m_Text: Ctrl
       m_Image: {fileID: 0}
     - m_Text: Shift
@@ -25526,8 +25502,6 @@ MonoBehaviour:
     m_Options:
     - m_Text: ....
       m_Image: {fileID: 0}
-    - m_Text: Alt
-      m_Image: {fileID: 0}
     - m_Text: Ctrl
       m_Image: {fileID: 0}
     - m_Text: Shift
@@ -25686,8 +25660,6 @@ MonoBehaviour:
   m_Options:
     m_Options:
     - m_Text: ....
-      m_Image: {fileID: 0}
-    - m_Text: Alt
       m_Image: {fileID: 0}
     - m_Text: Ctrl
       m_Image: {fileID: 0}
@@ -27714,8 +27686,6 @@ MonoBehaviour:
     m_Options:
     - m_Text: ....
       m_Image: {fileID: 0}
-    - m_Text: Alt
-      m_Image: {fileID: 0}
     - m_Text: Ctrl
       m_Image: {fileID: 0}
     - m_Text: Shift
@@ -28473,8 +28443,6 @@ MonoBehaviour:
   m_Options:
     m_Options:
     - m_Text: ....
-      m_Image: {fileID: 0}
-    - m_Text: Alt
       m_Image: {fileID: 0}
     - m_Text: Ctrl
       m_Image: {fileID: 0}
@@ -33286,8 +33254,6 @@ MonoBehaviour:
     m_Options:
     - m_Text: ....
       m_Image: {fileID: 0}
-    - m_Text: Alt
-      m_Image: {fileID: 0}
     - m_Text: Ctrl
       m_Image: {fileID: 0}
     - m_Text: Shift
@@ -36411,8 +36377,6 @@ MonoBehaviour:
     m_Options:
     - m_Text: ....
       m_Image: {fileID: 0}
-    - m_Text: Alt
-      m_Image: {fileID: 0}
     - m_Text: Ctrl
       m_Image: {fileID: 0}
     - m_Text: Shift
@@ -37609,8 +37573,6 @@ MonoBehaviour:
   m_Options:
     m_Options:
     - m_Text: ....
-      m_Image: {fileID: 0}
-    - m_Text: Alt
       m_Image: {fileID: 0}
     - m_Text: Ctrl
       m_Image: {fileID: 0}
@@ -39154,8 +39116,6 @@ MonoBehaviour:
     m_Options:
     - m_Text: ....
       m_Image: {fileID: 0}
-    - m_Text: Alt
-      m_Image: {fileID: 0}
     - m_Text: Ctrl
       m_Image: {fileID: 0}
     - m_Text: Shift
@@ -40480,8 +40440,6 @@ MonoBehaviour:
     m_Options:
     - m_Text: ....
       m_Image: {fileID: 0}
-    - m_Text: Alt
-      m_Image: {fileID: 0}
     - m_Text: Ctrl
       m_Image: {fileID: 0}
     - m_Text: Shift
@@ -40640,8 +40598,6 @@ MonoBehaviour:
   m_Options:
     m_Options:
     - m_Text: ....
-      m_Image: {fileID: 0}
-    - m_Text: Alt
       m_Image: {fileID: 0}
     - m_Text: Ctrl
       m_Image: {fileID: 0}
@@ -41609,8 +41565,6 @@ MonoBehaviour:
   m_Options:
     m_Options:
     - m_Text: ....
-      m_Image: {fileID: 0}
-    - m_Text: Alt
       m_Image: {fileID: 0}
     - m_Text: Ctrl
       m_Image: {fileID: 0}
@@ -44961,8 +44915,6 @@ MonoBehaviour:
     m_Options:
     - m_Text: ....
       m_Image: {fileID: 0}
-    - m_Text: Alt
-      m_Image: {fileID: 0}
     - m_Text: Ctrl
       m_Image: {fileID: 0}
     - m_Text: Shift
@@ -46417,8 +46369,6 @@ MonoBehaviour:
     m_Options:
     - m_Text: ....
       m_Image: {fileID: 0}
-    - m_Text: Alt
-      m_Image: {fileID: 0}
     - m_Text: Ctrl
       m_Image: {fileID: 0}
     - m_Text: Shift
@@ -46813,8 +46763,6 @@ MonoBehaviour:
     m_Options:
     - m_Text: ....
       m_Image: {fileID: 0}
-    - m_Text: Alt
-      m_Image: {fileID: 0}
     - m_Text: Ctrl
       m_Image: {fileID: 0}
     - m_Text: Shift
@@ -47033,8 +46981,6 @@ MonoBehaviour:
     m_Options:
     - m_Text: ....
       m_Image: {fileID: 0}
-    - m_Text: Alt
-      m_Image: {fileID: 0}
     - m_Text: Ctrl
       m_Image: {fileID: 0}
     - m_Text: Shift
@@ -47193,8 +47139,6 @@ MonoBehaviour:
   m_Options:
     m_Options:
     - m_Text: ....
-      m_Image: {fileID: 0}
-    - m_Text: Alt
       m_Image: {fileID: 0}
     - m_Text: Ctrl
       m_Image: {fileID: 0}
@@ -47443,8 +47387,6 @@ MonoBehaviour:
   m_Options:
     m_Options:
     - m_Text: ....
-      m_Image: {fileID: 0}
-    - m_Text: Alt
       m_Image: {fileID: 0}
     - m_Text: Ctrl
       m_Image: {fileID: 0}
@@ -47755,8 +47697,6 @@ MonoBehaviour:
   m_Options:
     m_Options:
     - m_Text: ....
-      m_Image: {fileID: 0}
-    - m_Text: Alt
       m_Image: {fileID: 0}
     - m_Text: Ctrl
       m_Image: {fileID: 0}
@@ -48315,8 +48255,6 @@ MonoBehaviour:
   m_Options:
     m_Options:
     - m_Text: ....
-      m_Image: {fileID: 0}
-    - m_Text: Alt
       m_Image: {fileID: 0}
     - m_Text: Ctrl
       m_Image: {fileID: 0}
