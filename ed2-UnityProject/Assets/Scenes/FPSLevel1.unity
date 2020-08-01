@@ -13114,12 +13114,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!198 &1587285167 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 8270485949992216528, guid: c6453f8e1f814744d8b94e5a6d1f9942,
-    type: 3}
-  m_PrefabInstance: {fileID: 2026385325}
-  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1605196967
 Mesh:
   m_ObjectHideFlags: 0
@@ -13802,18 +13796,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!114 &1639706827 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 432314279, guid: c6453f8e1f814744d8b94e5a6d1f9942,
-    type: 3}
-  m_PrefabInstance: {fileID: 2026385325}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96c2d6aa19782af4790a450e6c53c56b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1644005351 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7364199483829495118, guid: 852227e90c8cf8a42959719568807445,
@@ -16243,12 +16225,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 744193913}
   m_PrefabAsset: {fileID: 0}
---- !u!20 &1887862451 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 2000000, guid: c6453f8e1f814744d8b94e5a6d1f9942,
-    type: 3}
-  m_PrefabInstance: {fileID: 2026385325}
-  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1898791981
 Mesh:
   m_ObjectHideFlags: 0
@@ -17384,49 +17360,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11400004, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400004, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
-      propertyPath: rotateSpeed
-      value: 90
-      objectReference: {fileID: 0}
     - target: {fileID: 432314277, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
       propertyPath: gameOverCanvas
       value: 
       objectReference: {fileID: 1109944283}
-    - target: {fileID: 1651007462783185474, guid: c6453f8e1f814744d8b94e5a6d1f9942,
-        type: 3}
-      propertyPath: ammoText
-      value: 
-      objectReference: {fileID: 518272480}
-    - target: {fileID: 1651007462783185474, guid: c6453f8e1f814744d8b94e5a6d1f9942,
-        type: 3}
-      propertyPath: ammoSlot
-      value: 
-      objectReference: {fileID: 1639706827}
-    - target: {fileID: 1651007462783185474, guid: c6453f8e1f814744d8b94e5a6d1f9942,
-        type: 3}
-      propertyPath: flash
-      value: 
-      objectReference: {fileID: 1587285167}
-    - target: {fileID: 1651007462783185474, guid: c6453f8e1f814744d8b94e5a6d1f9942,
-        type: 3}
-      propertyPath: hitEffect
-      value: 
-      objectReference: {fileID: 614408385834804205, guid: 7a6088b7f19cec54c9f798a27f14dc5c,
-        type: 3}
-    - target: {fileID: 1651007462783185474, guid: c6453f8e1f814744d8b94e5a6d1f9942,
-        type: 3}
-      propertyPath: FPCamera
-      value: 
-      objectReference: {fileID: 1887862451}
-    - target: {fileID: 3275254134074861530, guid: c6453f8e1f814744d8b94e5a6d1f9942,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4268327812033376315, guid: c6453f8e1f814744d8b94e5a6d1f9942,
         type: 3}
       propertyPath: healthText
@@ -17434,44 +17371,14 @@ PrefabInstance:
       objectReference: {fileID: 150802831}
     - target: {fileID: 6290174790627353206, guid: c6453f8e1f814744d8b94e5a6d1f9942,
         type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6290174790627353206, guid: c6453f8e1f814744d8b94e5a6d1f9942,
-        type: 3}
       propertyPath: ammoText
       value: 
       objectReference: {fileID: 518272480}
-    - target: {fileID: 7898976063210937422, guid: c6453f8e1f814744d8b94e5a6d1f9942,
-        type: 3}
-      propertyPath: ammoSlot
-      value: 
-      objectReference: {fileID: 1639706827}
-    - target: {fileID: 7898976063210937422, guid: c6453f8e1f814744d8b94e5a6d1f9942,
-        type: 3}
-      propertyPath: FPCamera
-      value: 
-      objectReference: {fileID: 1887862451}
-    - target: {fileID: 7898976063210937422, guid: c6453f8e1f814744d8b94e5a6d1f9942,
-        type: 3}
-      propertyPath: ammoText
-      value: 
-      objectReference: {fileID: 518272480}
-    - target: {fileID: 7898976063210937422, guid: c6453f8e1f814744d8b94e5a6d1f9942,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8262207207490160929, guid: c6453f8e1f814744d8b94e5a6d1f9942,
         type: 3}
       propertyPath: impactCanvas
       value: 
       objectReference: {fileID: 610408059}
-    - target: {fileID: 8573536577122910083, guid: c6453f8e1f814744d8b94e5a6d1f9942,
-        type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 1887862451}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
 --- !u!1 &2028574910
