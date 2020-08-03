@@ -37,7 +37,7 @@ public class Weapon : MonoBehaviour
         {
             DisplayAmmo();
             
-            if (hfConfig.controllerInput.GetSensorValue(hfConfig.fire) > 800 && canShoot) 
+            if (hfConfig.controllerInput.GetSensorValue(hfConfig.fire) > hfConfig.cal[hfConfig.fire] && canShoot) 
             {
                 StartCoroutine(Shoot());
             }

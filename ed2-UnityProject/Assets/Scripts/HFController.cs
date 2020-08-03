@@ -17,6 +17,8 @@ public class HFController
 
     private bool debugMode = false;
 
+    private string connectedPortName;
+
     /*Array for sensor readings with one sensor per finger
         [0] -> thumb
         [1] -> pointer
@@ -70,6 +72,7 @@ public class HFController
                     {
                         Debug.Log("Response message received. Connected to device on port: " + port);
                         isConnected = true;
+                        connectedPortName = port;
                         serialPort.DiscardInBuffer();
                         Thread.Sleep(50); //sleep thread to make sure there will be data coming from arduino
                     }
@@ -100,6 +103,11 @@ public class HFController
     public bool IsConnected
     {
         get => isConnected;
+    }
+
+    public string ConnectedPortName
+    {
+        get => connectedPortName;
     }
 
     public int GetSensorValue(int sensorId)

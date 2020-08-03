@@ -88,7 +88,7 @@ public class KeyboardInputs : MonoBehaviour
                     commands[num] = Inputcmd[num].text;
                 }
             }
-        }    
+        }
     }
     
 
@@ -115,9 +115,8 @@ public class KeyboardInputs : MonoBehaviour
             {
                 File.AppendAllText(path, "," + commands[i]);
             }
-            
         }
-        
+        File.AppendAllText(path, "," + controllerInput.ConnectedPortName);
     }
     
     public void dpSetCommands(int num)

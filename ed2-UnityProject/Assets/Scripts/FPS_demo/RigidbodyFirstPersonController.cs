@@ -139,7 +139,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 RotateView();
                 
-                if (hfConfig.controllerInput.GetSensorValue(hfConfig.jump) > 800 && !m_Jump) 
+                if (hfConfig.controllerInput.GetSensorValue(hfConfig.jump) > hfConfig.cal[hfConfig.jump] && !m_Jump) 
                 {
                     m_Jump = true;
                 }
@@ -225,11 +225,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private Vector2 GetInput()
         {
 
-            if (hfConfig.controllerInput.GetSensorValue(hfConfig.moveForward) > 800) 
+            if (hfConfig.controllerInput.GetSensorValue(hfConfig.moveForward) > hfConfig.cal[hfConfig.moveForward]) 
             {
                 verticalInputValue = 1f;
             }
-            else if (hfConfig.controllerInput.GetSensorValue(hfConfig.moveBackward) > 800) 
+            else if (hfConfig.controllerInput.GetSensorValue(hfConfig.moveBackward) > hfConfig.cal[hfConfig.moveBackward]) 
             {
                 verticalInputValue = -1f;
             }
@@ -238,11 +238,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 verticalInputValue = 0f;
             }
 
-            if (hfConfig.controllerInput.GetSensorValue(hfConfig.moveLeft) > 800) 
+            if (hfConfig.controllerInput.GetSensorValue(hfConfig.moveLeft) > hfConfig.cal[hfConfig.moveLeft]) 
             {
                 horizontalInputValue = -1f;
             }
-            else if (hfConfig.controllerInput.GetSensorValue(hfConfig.moveRight) > 800) 
+            else if (hfConfig.controllerInput.GetSensorValue(hfConfig.moveRight) > hfConfig.cal[hfConfig.moveRight]) 
             {
                 horizontalInputValue = 1f;
             }
@@ -283,11 +283,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void RotateView()
         {
-            if (hfConfig.controllerInput.GetSensorValue(hfConfig.rotateLeft) > 800)
+            if (hfConfig.controllerInput.GetSensorValue(hfConfig.rotateLeft) > hfConfig.cal[hfConfig.rotateLeft])
             {
                 transform.Rotate(-Vector3.up * (rotateSpeed * Time.deltaTime));
             }
-            else if (hfConfig.controllerInput.GetSensorValue(hfConfig.rotateRight) > 800)
+            else if (hfConfig.controllerInput.GetSensorValue(hfConfig.rotateRight) > hfConfig.cal[hfConfig.rotateRight])
             {
                 transform.Rotate(Vector3.up * (rotateSpeed * Time.deltaTime));
             }

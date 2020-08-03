@@ -7,12 +7,17 @@ from GetCommand import GetCommands
 NUMBER_OF_SENSORS = 5
 readings = [0] * 5
 
+## I moved these 3 lines up here so that I could pass the port name through the commands array from the txt file
+gc = GetCommands()#reads file
+commands = gc.getCommands()#gets commands from the file
+threshold = 800
+
+portName = commands[31]
+
 isConnected = False
-serialPort = serial.Serial('COM3', timeout=1)
+serialPort = serial.Serial(portName, timeout=1)
 serialPort.flush()
 
-
-# TODO iterate through available ports and find correct one programmatically
 def wakeUpController():
     global isConnected
     serialPort.write("WakeUp\n".encode())  # send wake up message
@@ -45,11 +50,6 @@ def parseMessage(serialMessage):
             j = j+1
         readings[i] = int(messageValue)
         j = j+1
-
-gc = GetCommands()#reads file
-commands = gc.getCommands()#gets commands from the file
-threshold = 800
-
 
 def pressKey(i, combo):
     if(commands[combo] != ""):

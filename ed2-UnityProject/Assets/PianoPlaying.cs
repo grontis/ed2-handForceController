@@ -218,6 +218,7 @@ public class PianoPlaying : MonoBehaviour
         else
         {
             Debug.Log("Not connected");
+            controllerInput.ReconnectDevice();
         }
 
     }
