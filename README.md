@@ -10,6 +10,10 @@ Grant Kveton
 Dhaval Manojkumar Shirvi
 
 
+### Final Presentation Video
+[![finalVideo](readmeimgs/videoSSresize.png)](http://www.youtube.com/watch?v=HQArYuJmiJw "ED2 Final Video - Team 9")
+
+
 ## HFController.cs documentation
 *(as of 7/29/20, gkveton)*
 
