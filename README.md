@@ -42,6 +42,8 @@ GetSensorValue(int sensorId) - returns sensor reading from given sensor number.
 
 PrintReadings() - Debugging method used to print array of readings.
 
+ReconnectDevice() - Runs the port finding and connection algorithm.
+
 ClosePort() - Closes the connection to the serial port for the device.
 
 ##### Example use
@@ -63,8 +65,17 @@ public class CubeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ProcessMovement();
-        controllerInput.PrintReadings();
+        if(controllerInput.IsConnected)
+        {
+            ProcessMovement();
+            controllerInput.PrintReadings();
+        }
+        else
+        {
+            Debug.Log("Controller not connected");
+            controllerInput.ReconnectDevice();
+        }
+
     }
     
     private void ProcessMovement()
