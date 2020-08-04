@@ -35,6 +35,8 @@ IsConnected - Gets the boolean value of whether the serial port is open and conn
 
 PortNames - Gets the array of string values for all available port names.
 
+ConnectedPortName - Gets the string value of the port name being used for serial communication. 
+
 #### Methods:
 GetSensorValue(int sensorId) - returns sensor reading from given sensor number. 
 
