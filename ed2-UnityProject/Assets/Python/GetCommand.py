@@ -8,13 +8,18 @@ import os
 
 class GetCommands:
     commands = []
+    portName = ""
     def __init__(self):
         try:
             with open('Assets/Python/settings.txt', 'r') as file1:
                 for line in file1.readlines():
                     line = line.split(',')
                 self.commands = line
-                file1.close()
+                file1.close                    
+            with open('Assets/Python/portname.txt', 'r') as file2:
+                for line2 in file2.readlines():
+                    self.portName = line2
+                file2.close
         except:
             print('file not found')
             
@@ -30,4 +35,5 @@ class GetCommands:
             if(x == 'comma'):
                 x = ','
         return self.commands
-        
+    def getPortName(self):
+        return self.portName
