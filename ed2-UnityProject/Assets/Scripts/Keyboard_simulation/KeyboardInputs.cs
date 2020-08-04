@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System.IO;
 using IronPython.Hosting;
 using Microsoft.Scripting.Hosting;
@@ -13,11 +14,11 @@ public class KeyboardInputs : MonoBehaviour
     private HFController controllerInput;
     // combinations = {"Finger1", "Finger2", "Finger3", "Finger4", "Finger5", "Finger1&2", "Finger2&3", "Finger3&4", "Finger4&5", "Finger1&3", "10Finger2&4", "Finger3&5", "Finger1&4", "Finger2&5", "Finger1&5", "Finger1&2&3", "Finger2&3&4", "Finger3&4&5", "Finger1&2&4", "19Finger2&3&5", "Finger1&2&5", "Finger1&3&4", "22Finger2&4&5", "Finger1&3&5", "Finger1&4&5", "Finger1&2&3&4", "26Finger2&3&4&5", "Finger1&2&3&5", "Finger1&2&4&5", "Finger1&3&4&5", "Finger1&2&3&4&5"};
     public Text txt;
-    public InputField[] Inputcmd = new InputField[31];
-    public Dropdown[] dp = new Dropdown[31];
-    public string[] commands = new string[31];
+    public InputField[] Inputcmd = new InputField[34];
+    public Dropdown[] dp = new Dropdown[34];
+    public string[] commands = new string[34];
     private string[] FingerCombo = new string[] {
-        "Finger1", "Finger2", "Finger3", "Finger4", "Finger5", "Finger1&2", "Finger2&3", "Finger3&4", "Finger4&5", "Finger1&3", "Finger2&4", "Finger3&5", "Finger1&4", "Finger2&5", "Finger1&5", "Finger1&2&3", "Finger2&3&4", "Finger3&4&5", "Finger1&2&4", "Finger2&3&5", "Finger1&2&5", "Finger1&3&4", "Finger2&4&5", "Finger1&3&5", "Finger1&4&5", "Finger1&2&3&4", "Finger2&3&4&5", "Finger1&2&3&5", "Finger1&2&4&5", "Finger1&3&4&5", "Finger1&2&3&4&5"
+        "Finger1", "Finger2", "Finger3", "Finger4", "Finger5", "Finger1&2", "Finger2&3", "Finger3&4", "Finger4&5", "Finger1&3", "Finger2&4", "Finger3&5", "Finger1&4", "Finger2&5", "Finger1&5", "Finger1&2&3", "Finger2&3&4", "Finger3&4&5", "Finger1&2&4", "Finger2&3&5", "Finger1&2&5", "Finger1&3&4", "Finger2&4&5", "Finger1&3&5", "Finger1&4&5", "Finger1&2&3&4", "Finger2&3&4&5", "Finger1&2&3&5", "Finger1&2&4&5", "Finger1&3&4&5", "Finger1&2&3&4&5", "Left Palm", "Right Palm", "Top Palm"
     };
 
     
@@ -39,11 +40,11 @@ public class KeyboardInputs : MonoBehaviour
     public void checkCommands() //this is to check if the individual five sensors are assigned a key
     {
         bool checkCmd = false;
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 8; i++)
         {
             if (commands[i] == "")
             {
-                txt.text = "Minimum Requirement: Set Commands for Finger1, Finger2, Finger3, Finger4, Finger5";
+                txt.text = "Minimum Requirement: Set Commands for Finger1, Finger2, Finger3, Finger4, Finger5, Left Palm, Right Palm, Top Palm";
 
             }
             else
@@ -57,6 +58,7 @@ public class KeyboardInputs : MonoBehaviour
         if (checkCmd == true)
         {
             saveText(); //saves the inputs to a text file
+            savePort();
             controllerInput.ClosePort();// to stop using port so .py file can use it 
             var engine = Python.CreateEngine();
             engine.ExecuteFile("Assets/Python/executionfile.py"); //executes the .py file
@@ -65,7 +67,7 @@ public class KeyboardInputs : MonoBehaviour
     public void setCommand(int num)//this would get the user input and assign it to commands
     {
         txt.text = "";
-        for (int i = 0; i < 31; i++)
+        for (int i = 0; i < 34; i++)
         {
             if (i == num)
             {
@@ -88,9 +90,20 @@ public class KeyboardInputs : MonoBehaviour
                     commands[num] = Inputcmd[num].text;
                 }
             }
-        }
+        }    
     }
     
+    public void savePort()
+    {
+        string portName = controllerInput.ConnectedPortName;
+        
+        string path = Application.dataPath + "/Python/portname.txt";
+        if (!File.Exists(path))
+        {
+            File.OpenWrite(path);
+        }
+        File.WriteAllText(path, portName);
+    }
 
     public void saveText()
     {
@@ -101,7 +114,7 @@ public class KeyboardInputs : MonoBehaviour
             File.OpenWrite(path);
         }
         File.WriteAllText(path, commands[0]);
-        for (int i = 1; i < 31; i++)
+        for (int i = 1; i < 34; i++)
         {
             if(commands[i] == "")
             {
@@ -115,8 +128,9 @@ public class KeyboardInputs : MonoBehaviour
             {
                 File.AppendAllText(path, "," + commands[i]);
             }
+            
         }
-        File.AppendAllText(path, "," + controllerInput.ConnectedPortName);
+        
     }
     
     public void dpSetCommands(int num)
@@ -133,7 +147,7 @@ public class KeyboardInputs : MonoBehaviour
             Inputcmd[num].characterLimit = 7;
             Inputcmd[num].text = options[index].text;
             commands[num] = Inputcmd[num].text;
-            for (int i = 0; i < 31; i++)
+            for (int i = 0; i < 34; i++)
             {
                 if (i == num)
                 {
@@ -150,5 +164,10 @@ public class KeyboardInputs : MonoBehaviour
             Inputcmd[num].characterLimit = 1;
         }
         
+    }
+
+    public void load_Main()
+    {
+        SceneManager.LoadScene("MainScreen", LoadSceneMode.Single);
     }
 }
