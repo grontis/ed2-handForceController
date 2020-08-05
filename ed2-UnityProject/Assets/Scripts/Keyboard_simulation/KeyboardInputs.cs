@@ -42,10 +42,9 @@ public class KeyboardInputs : MonoBehaviour
         bool checkCmd = false;
         for (int i = 0; i < 8; i++)
         {
-            if (commands[i] == "")
+            if ((i < 3 && commands[i+31] == "") || commands[i] == "")
             {
                 txt.text = "Minimum Requirement: Set Commands for Finger1, Finger2, Finger3, Finger4, Finger5, Left Palm, Right Palm, Top Palm";
-
             }
             else
             {

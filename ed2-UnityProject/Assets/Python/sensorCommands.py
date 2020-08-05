@@ -524,7 +524,5 @@ while True:
             pressKey(8,33)
         else:
             keyboard.release(commands[33])
-        if(getSensorValue(0) > threshold, getSensorValue(1) > threshold, getSensorValue(2) > threshold, getSensorValue(3) > threshold, getSensorValue(4) > threshold, getSensorValue(5) > threshold, getSensorValue(6) > threshold, getSensorValue(7) > threshold):
-            break
     else:
         wakeUpController()
